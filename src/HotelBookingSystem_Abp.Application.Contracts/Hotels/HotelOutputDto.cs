@@ -10,7 +10,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace HotelBookingSystem_Abp.Hotels
 {
-    public class HotelOutputDto : AuditedEntityDto<Guid>
+    public class HotelOutputDto : EntityDto<Guid>
     {
         public Guid AdminId { get; set; }
 
@@ -34,8 +34,8 @@ namespace HotelBookingSystem_Abp.Hotels
 
         public List<string>? ImageUrls { get; set; }
 
-        public List<RoomInputDto>? Rooms { get; set; }
+        public List<RoomOutputDto>? Rooms { get; set; }
 
-        public List<ReviewInputDto>? Reviews { get; set; }
+        public List<ReviewOutputDto>? Reviews { get; set; }
     }
 }

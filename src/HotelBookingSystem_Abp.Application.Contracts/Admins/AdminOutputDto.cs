@@ -6,7 +6,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace HotelBookingSystem_Abp.Admins
 {
-    public class AdminOutputDto : AuditedEntityDto<Guid>
+    public class AdminOutputDto : EntityDto<Guid>
     {
         public int AdminId { get; set; }
 
