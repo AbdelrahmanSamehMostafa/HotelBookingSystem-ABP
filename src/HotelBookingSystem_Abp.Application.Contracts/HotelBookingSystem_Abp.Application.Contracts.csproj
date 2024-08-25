@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <RootNamespace>HotelBookingSystem_Abp</RootNamespace>
   </PropertyGroup>
 
