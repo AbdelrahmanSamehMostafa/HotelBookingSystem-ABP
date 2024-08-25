@@ -88,6 +88,8 @@ public class HotelBookingSystem_AbpDbContext :
                     });
                 }
                 );
+
+            
     }
 }
 

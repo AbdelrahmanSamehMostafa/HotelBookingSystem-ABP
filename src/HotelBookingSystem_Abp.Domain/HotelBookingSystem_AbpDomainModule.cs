@@ -1,10 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using HotelBookingSystem_Abp.Localization;
-using HotelBookingSystem_Abp.MultiTenancy;
-using Volo.Abp.Localization;
+using Volo.Abp.Data;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
+using Volo.Abp.Localization;
 using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.BlobStoring.Database;
@@ -17,6 +16,8 @@ using Volo.Abp.Emailing;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
 using Volo.Abp.TenantManagement;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using HotelBookingSystem_Abp.MultiTenancy;
 
 namespace HotelBookingSystem_Abp;
 
@@ -34,7 +35,7 @@ namespace HotelBookingSystem_Abp;
     typeof(AbpOpenIddictDomainModule),
     typeof(AbpTenantManagementDomainModule),
     typeof(BlobStoringDatabaseDomainModule)
-    )]
+)]
 public class HotelBookingSystem_AbpDomainModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
@@ -64,7 +65,8 @@ public class HotelBookingSystem_AbpDomainModule : AbpModule
             options.Languages.Add(new LanguageInfo("de-DE", "de-DE", "Deutsch"));
             options.Languages.Add(new LanguageInfo("es", "es", "Español"));
         });
-        
+
+        context.Services.AddTransient<IDataSeedContributor, SuperAdminSeedContributor>();
 
 #if DEBUG
         context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());
