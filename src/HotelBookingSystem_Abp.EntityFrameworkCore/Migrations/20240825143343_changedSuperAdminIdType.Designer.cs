@@ -4,6 +4,7 @@ using HotelBookingSystem_Abp.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace HotelBookingSystem_Abp.Migrations
 {
     [DbContext(typeof(HotelBookingSystem_AbpDbContext))]
-    partial class HotelBookingSystem_AbpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240825143343_changedSuperAdminIdType")]
+    partial class changedSuperAdminIdType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

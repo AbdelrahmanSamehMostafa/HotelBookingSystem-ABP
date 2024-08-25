@@ -11,7 +11,7 @@ namespace BookingSystem.Models
 {
     public class Admin : AuditedEntity<Guid>
     {
-        public Guid SuperAdminId { get; set; }
+        public int SuperAdminId { get; set; }
 
         public required string FirstName { get; set; }
 
