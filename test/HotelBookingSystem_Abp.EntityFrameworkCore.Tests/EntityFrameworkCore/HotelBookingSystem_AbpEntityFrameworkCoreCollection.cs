@@ -1,0 +1,9 @@
+﻿using Xunit;
+
+namespace HotelBookingSystem_Abp.EntityFrameworkCore;
+
+[CollectionDefinition(HotelBookingSystem_AbpTestConsts.CollectionDefinitionName)]
+public class HotelBookingSystem_AbpEntityFrameworkCoreCollection : ICollectionFixture<HotelBookingSystem_AbpEntityFrameworkCoreFixture>
+{
+
+}

@@ -1,0 +1,39 @@
+{
+  "id": "438c20f5-a2a0-4d85-85d2-508d941d0ee5",
+  "template": "app",
+  "versions": {
+    "AbpFramework": "8.2.1",
+    "AbpStudio": "0.7.7"
+  },
+  "modules": {
+    "HotelBookingSystem_Abp": {
+      "path": "HotelBookingSystem_Abp.abpmdl"
+    }
+  }, 
+  "runProfiles": {
+    "Default": {
+      "path": "etc/abp-studio/run-profiles/Default.abprun.json"
+    }
+  },
+  "options": {
+    "httpRequests": {
+        "ignoredUrls": [
+          "^/metrics$"
+      ]
+    }
+  },
+  "creatingStudioConfiguration": {
+    "template": "app",
+    "createdAbpStudioVersion": "0.7.7",
+    "tiered": "false",
+    "uiFramework": "mvc",
+    "databaseProvider": "ef",
+    "databaseManagementSystem": "sqlserver",
+    "separateTenantSchema": "false",
+    "theme": "leptonx-lite",
+    "themeStyle": "",
+    "mobileFramework": "none",
+    "publicWebsite": "false",
+    "socialLogin": ""
+  }
+}

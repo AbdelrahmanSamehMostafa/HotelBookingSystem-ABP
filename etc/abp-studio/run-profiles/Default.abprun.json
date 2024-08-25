@@ -1,0 +1,10 @@
+﻿{
+  "applications": {
+    "HotelBookingSystem_Abp.Web": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44372",
+      "path": "../../../src/HotelBookingSystem_Abp.Web/HotelBookingSystem_Abp.Web.csproj",
+      "kubernetesService": ".*-web$"
+    }
+  }
+}

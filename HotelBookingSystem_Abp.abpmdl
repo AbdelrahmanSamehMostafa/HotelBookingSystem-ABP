@@ -1,0 +1,89 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.Account": {
+      "version": "8.2.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "8.2.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "8.2.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "8.2.1",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "HotelBookingSystem_Abp.Application": {
+      "path": "src/HotelBookingSystem_Abp.Application/HotelBookingSystem_Abp.Application.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.Application.Tests": {
+      "path": "test/HotelBookingSystem_Abp.Application.Tests/HotelBookingSystem_Abp.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "HotelBookingSystem_Abp.Domain.Shared": {
+      "path": "src/HotelBookingSystem_Abp.Domain.Shared/HotelBookingSystem_Abp.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.Application.Contracts": {
+      "path": "src/HotelBookingSystem_Abp.Application.Contracts/HotelBookingSystem_Abp.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.HttpApi": {
+      "path": "src/HotelBookingSystem_Abp.HttpApi/HotelBookingSystem_Abp.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.HttpApi.Client": {
+      "path": "src/HotelBookingSystem_Abp.HttpApi.Client/HotelBookingSystem_Abp.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.Web": {
+      "path": "src/HotelBookingSystem_Abp.Web/HotelBookingSystem_Abp.Web.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.Web.Tests": {
+      "path": "test/HotelBookingSystem_Abp.Web.Tests/HotelBookingSystem_Abp.Web.Tests.abppkg",
+      "folder": "test"
+    },
+    "HotelBookingSystem_Abp.EntityFrameworkCore.Tests": {
+      "path": "test/HotelBookingSystem_Abp.EntityFrameworkCore.Tests/HotelBookingSystem_Abp.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "HotelBookingSystem_Abp.EntityFrameworkCore": {
+      "path": "src/HotelBookingSystem_Abp.EntityFrameworkCore/HotelBookingSystem_Abp.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.TestBase": {
+      "path": "test/HotelBookingSystem_Abp.TestBase/HotelBookingSystem_Abp.TestBase.abppkg",
+      "folder": "test"
+    },
+    "HotelBookingSystem_Abp.Domain.Tests": {
+      "path": "test/HotelBookingSystem_Abp.Domain.Tests/HotelBookingSystem_Abp.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "HotelBookingSystem_Abp.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/HotelBookingSystem_Abp.HttpApi.Client.ConsoleTestApp/HotelBookingSystem_Abp.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "HotelBookingSystem_Abp.DbMigrator": {
+      "path": "src/HotelBookingSystem_Abp.DbMigrator/HotelBookingSystem_Abp.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "HotelBookingSystem_Abp.Domain": {
+      "path": "src/HotelBookingSystem_Abp.Domain/HotelBookingSystem_Abp.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
