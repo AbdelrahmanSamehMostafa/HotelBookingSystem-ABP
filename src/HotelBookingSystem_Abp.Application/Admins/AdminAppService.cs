@@ -6,6 +6,7 @@ using BookingSystem.Models;
 using HotelBookingSystem_Abp.Bases;
 using HotelBookingSystem_Abp.Exceptions;
 using HotelBookingSystem_Abp.IRepositories;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
@@ -13,6 +14,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace HotelBookingSystem_Abp.Admins
 {
+    [RemoteService(IsEnabled = false)]
     public class AdminAppService : BaseAppService, IAdminAppService
     {
         private readonly IRepository<Admin, Guid> _adminRepository;
