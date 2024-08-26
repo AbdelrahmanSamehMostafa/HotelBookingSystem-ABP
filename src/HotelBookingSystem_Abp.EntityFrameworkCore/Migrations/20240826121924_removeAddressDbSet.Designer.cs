@@ -4,6 +4,7 @@ using HotelBookingSystem_Abp.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace HotelBookingSystem_Abp.Migrations
 {
     [DbContext(typeof(HotelBookingSystem_AbpDbContext))]
-    partial class HotelBookingSystem_AbpDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240826121924_removeAddressDbSet")]
+    partial class removeAddressDbSet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,8 +126,6 @@ namespace HotelBookingSystem_Abp.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Booking");
                 });
@@ -2298,15 +2299,6 @@ namespace HotelBookingSystem_Abp.Migrations
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
                 });
 
-            modelBuilder.Entity("BookingSystem.Models.Booking", b =>
-                {
-                    b.HasOne("BookingSystem.Models.Customer", null)
-                        .WithMany("Bookings")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("BookingSystem.Models.Hotel", b =>
                 {
                     b.HasOne("BookingSystem.Models.Admin", null)
@@ -2522,8 +2514,6 @@ namespace HotelBookingSystem_Abp.Migrations
 
             modelBuilder.Entity("BookingSystem.Models.Customer", b =>
                 {
-                    b.Navigation("Bookings");
-
                     b.Navigation("Reviews");
                 });
 

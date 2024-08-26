@@ -4,7 +4,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace HotelBookingSystem_Abp.Admins
 {
-    public class AdminInputDto : EntityDto
+    public class AdminInputDto : EntityDto<Guid>
     {
         [Required(ErrorMessage = "First Name is required.")]
         [StringLength(50, ErrorMessage = "First Name can't be longer than 50 characters.")]

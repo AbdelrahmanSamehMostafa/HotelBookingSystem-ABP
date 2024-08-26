@@ -47,7 +47,6 @@ public class HotelBookingSystem_AbpDbContext :
     public DbSet<Customer> Customer { get; set; }
     public DbSet<SuperAdmin> SuperAdmin { get; set; }
     public DbSet<Admin> Admin { get; set; }
-    public DbSet<Address> Address { get; set; }
     public DbSet<Review> Review { get; set; }
     public DbSet<Hotel> Hotel { get; set; }
     public DbSet<Room> Room { get; set; }
@@ -89,7 +88,7 @@ public class HotelBookingSystem_AbpDbContext :
                 }
                 );
 
-            
+
     }
 }
 

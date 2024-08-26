@@ -20,5 +20,6 @@ namespace BookingSystem.Models
 
         public List<Review>? Reviews { get; set; }
 
+        public List<Booking>? Bookings { get; set; }
     }
 }
