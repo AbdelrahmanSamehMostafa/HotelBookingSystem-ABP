@@ -8,8 +8,6 @@ namespace HotelBookingSystem_Abp.Admins
 {
     public class AdminOutputDto : EntityDto<Guid>
     {
-        public int AdminId { get; set; }
-
         public string Name { get; set; }
 
         public string Email { get; set; }

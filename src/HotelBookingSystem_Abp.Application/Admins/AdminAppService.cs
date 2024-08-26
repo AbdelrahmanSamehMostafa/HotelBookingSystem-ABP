@@ -29,7 +29,7 @@ namespace HotelBookingSystem_Abp.Admins
         public async Task<AdminInputDto> CreateAdminAsync(AdminInputDto input)
         {
             // Check for duplicates
-            if (await _customAdminRepository.IsDuplicateAsync(input.Id))
+            if (!await _customAdminRepository.IsDuplicateAsync(input.Id))
             {
                 throw new EntityAlreadyExistsException(typeof(Admin), "An admin with the same Id already exists.");
             }
@@ -61,6 +61,7 @@ namespace HotelBookingSystem_Abp.Admins
 
             return ObjectMapper.Map<Admin, AdminOutputDto>(admin);
         }
+
         public async Task<PagedResultDto<AdminOutputDto>> GetListAsync(BaseListModelDto input)
         {
             var (totalCount, admins) = await _customAdminRepository.GetPagedAdminsAsync(input.Sorting, input.SkipCount, input.MaxResultCount);
@@ -75,7 +76,7 @@ namespace HotelBookingSystem_Abp.Admins
         public async Task<AdminOutputDto> UpdateAdminAsync(AdminInputDto input)
         {
             // Check for duplicates
-            if (await _customAdminRepository.IsDuplicateAsync(input.Id))
+            if (!await _customAdminRepository.IsDuplicateAsync(input.Id))
             {
                 throw new EntityAlreadyExistsException(typeof(Admin), "An admin with the same Id already exists.");
             }

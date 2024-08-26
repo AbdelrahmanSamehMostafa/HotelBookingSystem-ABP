@@ -242,6 +242,7 @@ public class HotelBookingSystem_AbpWebModule : AbpModule
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelBookingSystem_Abp API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
+
             }
         );
     }
@@ -285,6 +286,7 @@ public class HotelBookingSystem_AbpWebModule : AbpModule
         app.UseAbpSwaggerUI(options =>
         {
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelBookingSystem_Abp API");
+            options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None); // Collapses all controllers by default
         });
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();

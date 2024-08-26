@@ -1,27 +1,30 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
-using HotelBookingSystem_Abp.Admins;
 using HotelBookingSystem_Abp.Bases;
+using HotelBookingSystem_Abp.Rooms;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.Extensions.Logging;
 
 namespace HotelBookingSystem_Abp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController : ControllerBase
+    public class RoomController : ControllerBase
     {
-        private readonly IAdminAppService _adminAppService;
+        private readonly IRoomAppService _roomAppService;
 
-        public AdminController(IAdminAppService adminAppService)
+        public RoomController(IRoomAppService roomAppService)
         {
-            _adminAppService = adminAppService;
+            _roomAppService = roomAppService;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] AdminInputDto input)
+        public async Task<IActionResult> CreateAsync([FromBody] RoomInputDto input)
         {
-            var result = await _adminAppService.CreateAdminAsync(input);
+            var result = await _roomAppService.CreateRoomAsync(input);
             return Ok(result);
         }
 
@@ -29,7 +32,7 @@ namespace HotelBookingSystem_Abp.Controllers
         [Route("{id}")]
         public async Task<IActionResult> DeleteAsync(Guid id)
         {
-            var success = await _adminAppService.DeleteAdminAsync(id);
+            var success = await _roomAppService.DeleteRoomAsync(id);
             if (success)
             {
                 return NoContent();
@@ -41,21 +44,21 @@ namespace HotelBookingSystem_Abp.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetAsync(Guid id)
         {
-            var result = await _adminAppService.GetAdminAsync(id);
+            var result = await _roomAppService.GetRoomAsync(id);
             return Ok(result);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetListAsync([FromQuery] BaseListModelDto input)
         {
-            var result = await _adminAppService.GetListAsync(input);
+            var result = await _roomAppService.GetListAsync(input);
             return Ok(result);
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAsync([FromBody] AdminInputDto input)
+        public async Task<IActionResult> UpdateAsync([FromBody] RoomInputDto input)
         {
-            var result = await _adminAppService.UpdateAdminAsync(input);
+            var result = await _roomAppService.UpdateRoomAsync(input);
             return Ok(result);
         }
     }
