@@ -19,7 +19,7 @@ namespace HotelBookingSystem_Abp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] AdminInputDto input)
+        public async Task<IActionResult> CreateAdminAsync([FromBody] AdminInputDto input)
         {
             var result = await _adminAppService.CreateAdminAsync(input);
             return Ok(result);
@@ -27,7 +27,7 @@ namespace HotelBookingSystem_Abp.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteAsync(Guid id)
+        public async Task<IActionResult> DeleteAdminAsync(Guid id)
         {
             var success = await _adminAppService.DeleteAdminAsync(id);
             if (success)
@@ -39,7 +39,7 @@ namespace HotelBookingSystem_Abp.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> GetAsync(Guid id)
+        public async Task<IActionResult> GetAdminAsync(Guid id)
         {
             var result = await _adminAppService.GetAdminAsync(id);
             return Ok(result);
@@ -53,7 +53,7 @@ namespace HotelBookingSystem_Abp.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAsync([FromBody] AdminInputDto input)
+        public async Task<IActionResult> UpdateAdminAsync([FromBody] AdminInputDto input)
         {
             var result = await _adminAppService.UpdateAdminAsync(input);
             return Ok(result);
