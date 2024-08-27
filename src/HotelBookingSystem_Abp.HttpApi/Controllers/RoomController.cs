@@ -22,7 +22,7 @@ namespace HotelBookingSystem_Abp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] RoomInputDto input)
+        public async Task<IActionResult> CreateRoomAsync([FromBody] RoomInputDto input)
         {
             var result = await _roomAppService.CreateRoomAsync(input);
             return Ok(result);
@@ -30,7 +30,7 @@ namespace HotelBookingSystem_Abp.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteAsync(Guid id)
+        public async Task<IActionResult> DeleteRoomAsync(Guid id)
         {
             var success = await _roomAppService.DeleteRoomAsync(id);
             if (success)
@@ -42,7 +42,7 @@ namespace HotelBookingSystem_Abp.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> GetAsync(Guid id)
+        public async Task<IActionResult> GetRoomAsync(Guid id)
         {
             var result = await _roomAppService.GetRoomAsync(id);
             return Ok(result);
@@ -56,7 +56,7 @@ namespace HotelBookingSystem_Abp.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAsync([FromBody] RoomInputDto input)
+        public async Task<IActionResult> UpdateRoomAsync([FromBody] RoomInputDto input)
         {
             var result = await _roomAppService.UpdateRoomAsync(input);
             return Ok(result);
